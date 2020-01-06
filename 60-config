@@ -1,8 +1,8 @@
 #!/usr/bin/with-contenv bash
 D="$( basename `readlink  /config/keys/letsencrypt` )"
 cd /config/etc/letsencrypt/live/
-for sd in $(echo "$SUBDOMAINS" | tr "," " "); do
-    SD="${job}.${URL}"
+for SUB in $(echo "$SUBDOMAINS" | tr "," " "); do
+    SD="${SUB}.${URL}"
     if [ "$D" != "$SD" ]; then
         ln -s "$D" "$SD"
     fi
