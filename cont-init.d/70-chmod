@@ -1,4 +1,4 @@
 #!/usr/bin/with-contenv bash
 if [ -n "$LETSENCRYPT_CHMOD" ]; then
-    chmod -R "$LETSENCRYPT_CHMOD" /config//etc/letsencrypt
+    chmod -R "$LETSENCRYPT_CHMOD" /config/etc/letsencrypt
 fi
