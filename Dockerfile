@@ -1,3 +1,3 @@
 FROM linuxserver/letsencrypt:latest
 
-COPY 60-config /etc/cont-init.d/
+COPY cont-init.d/* /etc/cont-init.d/

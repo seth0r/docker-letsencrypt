@@ -7,4 +7,3 @@ for SUB in $(echo "$SUBDOMAINS" | tr "," " "); do
         ln -s "$D" "$SD"
     fi
 done
-
