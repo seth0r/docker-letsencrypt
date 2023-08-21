@@ -1,9 +1,11 @@
 #!/usr/bin/with-contenv bash
-D="$( basename `readlink  /config/keys/letsencrypt` )"
-cd /config/etc/letsencrypt/live/
-for SUB in $(echo "$SUBDOMAINS" | tr "," " "); do
-    SD="${SUB}.${URL}"
-    if [ "$D" != "$SD" -a ! -e "$SD" ]; then
-        ln -s "$D" "$SD"
-    fi
-done
+if [ -e /config/keys/letsencrypt ]; then
+    D="$( basename `readlink  /config/keys/letsencrypt` )"
+    cd /config/etc/letsencrypt/live/
+    for SUB in $(echo "$SUBDOMAINS" | tr "," " "); do
+        SD="${SUB}.${URL}"
+        if [ "$D" != "$SD" -a ! -e "$SD" ]; then
+            ln -s "$D" "$SD"
+        fi
+    done
+fi
